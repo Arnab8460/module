@@ -21,19 +21,18 @@ return new class extends Migration
             $table->integer('balconies')->nullable();
 
             // Area Details
-            $table->float('carpet_area')->nullable(); // in sq.ft
-            $table->float('super_builtup_area')->nullable(); // in sq.ft
+            $table->float('carpet_area')->nullable(); 
+            $table->float('super_builtup_area')->nullable(); 
             $table->enum('area_unit', ['sqft', 'sqm', 'sqyd'])->default('sqft');
 
             // Floor Details
             $table->integer('floor_number')->nullable();
             $table->integer('total_floors')->nullable();
-            $table->string('property_on_floor')->nullable(); // e.g. "Ground Floor", "1st Floor"
+            $table->string('property_on_floor')->nullable(); 
 
             // Status & Ownership
             $table->enum('availability_status', ['ready_to_move', 'under_construction'])->nullable();
-            $table->string('ownership_type')->nullable(); // e.g. Freehold, Leasehold, etc.
-
+            $table->string('ownership_type')->nullable(); 
             // Price Details
             $table->float('expected_price')->nullable();
             $table->boolean('price_negotiable')->default(false);
